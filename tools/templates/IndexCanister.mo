@@ -1,9 +1,12 @@
 import CanisterMap "./CanisterMap";
 
 shared ({caller = owner}) actor class {{name}}() = this {
+  /// @required stable variable (Do not delete or change)
+  ///
+  /// Holds the CanisterMap of PK -> CanisterIdList
   stable var pkToCanisterMap = CanisterMap.init();
 
-  /// @required method (Do not delete or change)
+  /// @required API (Do not delete or change)
   ///
   /// Get all canisters for an specific PK
   ///
@@ -12,7 +15,7 @@ shared ({caller = owner}) actor class {{name}}() = this {
     getCanisterIdsIfExists(pk);
   };
 
-  /// @required method (Do not delete or change)
+  /// @required function (Do not delete or change)
   ///
   /// Helper method acting as an interface for returning an empty array if no canisters
   /// exist for the given PK
@@ -23,7 +26,7 @@ shared ({caller = owner}) actor class {{name}}() = this {
     }
   };
 
-  /// @modify and @required (Do not delete, but must change/modify for your given application actor and data model)
+  /// @modify and @required (Do not delete or change the API, but must change/modify the function logic for your given application actor and data model)
   ///
   /// This is method is called by CanDB for AutoScaling. It is up to the developer to specify which
   /// PK prefixes should spin up which canister actor.
