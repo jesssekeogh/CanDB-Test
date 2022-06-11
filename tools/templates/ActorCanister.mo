@@ -1,5 +1,5 @@
-import CA "./CanisterActions";
-import CanDB "./CanDB";
+import CA "mo:candb/CanisterActions";
+import CanDB "mo:candb/CanDB";
 
 shared ({ caller = owner }) actor class {{actor_class_name}}({
   primaryKey: Text;

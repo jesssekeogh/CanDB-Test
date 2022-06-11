@@ -1,4 +1,7 @@
-import CanisterMap "./CanisterMap";
+import Error "mo:base/Error";
+import Text "mo:base/Text";
+import CanisterMap "mo:candb/CanisterMap";
+import Buffer "mo:stable-buffer/StableBuffer";
 
 shared ({caller = owner}) actor class {{name}}() = this {
   /// @required stable variable (Do not delete or change)
